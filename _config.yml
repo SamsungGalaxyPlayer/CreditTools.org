@@ -5,7 +5,7 @@ theme: just-the-docs
 url: https://samsunggalaxyplayer.github.io/new-project
 
 aux_links:
-  Subreddit: https://reddit.com
+  Propose Change: https://github.com
 
 collections:
   businesses:

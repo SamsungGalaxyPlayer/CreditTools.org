@@ -19,6 +19,28 @@ https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html#jquer
 
 ---
 
+<script type="text/javascript" src="jquery.dataTables.js"></script>
+<script type="text/javascript" src="dataTables.filter.html.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').dataTable( {
+            "columnDefs": [
+                { type: "type", targets: 0 }
+            ]
+        } );
+    } );
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
+<script>
+$(document).ready( function () {
+    $('#businesses_table').DataTable();
+} );
+</script>
+
+
 <table id="businesses_table">
   <tr>
     <th>Name</th>
@@ -36,11 +58,3 @@ https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html#jquer
   {% endfor %}
 </table>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
-<script>
-$(document).ready( function () {
-    $('#businesses_table').DataTable();
-} );
-</script>
