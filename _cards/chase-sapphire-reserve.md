@@ -1,5 +1,5 @@
 ---
-name: Chase Sapphire Preferred
+name: Chase Sapphire Reserve
 brand: Chase
 annual_fee: $550
 apr: 21.24%-28.24%

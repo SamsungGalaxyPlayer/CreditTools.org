@@ -51,7 +51,7 @@ $(document).ready( function () {
     </tr>
   </thead>
   <tbody>
-  {% for business in site.businesses %}
+  {% for card in site.cards %}
     <tr>
         <td>{{ business.name }}</td>
         <td>{{ business.type }}</td>
