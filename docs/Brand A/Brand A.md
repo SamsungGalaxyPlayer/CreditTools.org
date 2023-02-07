@@ -1,6 +1,6 @@
 ---
 title: "Brand A"
-has-children: true
+has_children: true
 ---
 
 # Brand A
