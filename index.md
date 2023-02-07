@@ -42,19 +42,23 @@ $(document).ready( function () {
 
 
 <table id="businesses_table">
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Address</th>
-    <th>Info</th>
-  </tr>
+  <thead>  
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Address</th>
+        <th>Info</th>
+    </tr>
+  </thead>
+  <tbody>
   {% for business in site.businesses %}
-  <tr>
-    <td>{{ business.name }}</td>
-    <td>{{ business.type }}</td>
-    <td>{{ business.address }}</td>
-    <td>{{ business.url }}</td>
-  </tr>
-  {% endfor %}
+    <tr>
+        <td>{{ business.name }}</td>
+        <td>{{ business.type }}</td>
+        <td>{{ business.address }}</td>
+        <td>{{ business.url }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 
