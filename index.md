@@ -42,12 +42,7 @@ $(document).ready( function () {
 
 
 <table id="businesses_table">
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Address</th>
-    <th>Info</th>
-  </tr>
+
   {% for business in site.businesses %}
   <tr>
     <td>{{ business.name }}</td>
