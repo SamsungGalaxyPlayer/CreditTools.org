@@ -36,12 +36,12 @@ https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html#jquer
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
 <script>
 $(document).ready( function () {
-    $('#businesses_table').DataTable();
+    $('#cards_table').DataTable();
 } );
 </script>
 
 
-<table id="businesses_table">
+<table id="cards_table">
   <thead>  
     <tr>
         <th>Name</th>

@@ -10,7 +10,7 @@ title: "Chase"
     $(document).ready(function() {
         $('#example').dataTable( {
             "columnDefs": [
-                { type: "type", targets: 0 }
+                { type: "annual_fee", targets: 0 }
             ]
         } );
     } );
@@ -21,11 +21,11 @@ title: "Chase"
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
 <script>
 $(document).ready( function () {
-    $('#businesses_table').DataTable();
+    $('#cards_table').DataTable();
 } );
 </script>
 
-<table id="cards_table">
+<table id="chase_cards_table">
   <thead>
     <tr>
       <th>Name</th>

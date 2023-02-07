@@ -10,7 +10,7 @@ aux_links:
   Propose Change: https://github.com
 
 collections:
-  businesses:
+  cards:
     output: true
 
 plugins:
