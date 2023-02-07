@@ -2,6 +2,7 @@
 name: Best Buy
 type: electronics
 address: 4 Main Street
+url: https://bestbuy.com
 ---
 Best Buy is an electronics store located at 4 Main Street.
 Opening times:
