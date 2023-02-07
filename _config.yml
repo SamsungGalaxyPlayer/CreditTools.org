@@ -2,6 +2,8 @@ title: New Project
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
+permalink: pretty
+
 url: https://samsunggalaxyplayer.github.io/new-project
 
 aux_links:
@@ -10,3 +12,7 @@ aux_links:
 collections:
   businesses:
     output: true
+
+plugins:
+  - jekyll-default-layout
+  - jekyll-seo-tag

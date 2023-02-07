@@ -53,7 +53,7 @@ $(document).ready( function () {
     <td>{{ business.name }}</td>
     <td>{{ business.type }}</td>
     <td>{{ business.address }}</td>
-    <td>{{ business.url }}</a></td>
+    <td>{{ business.url }}</td>
   </tr>
   {% endfor %}
 </table>
