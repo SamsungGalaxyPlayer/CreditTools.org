@@ -21,7 +21,7 @@ title: "Chase"
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
 <script>
 $(document).ready( function () {
-    $('#cards_table').DataTable();
+    $('#chase_cards_table').DataTable();
 } );
 </script>
 
