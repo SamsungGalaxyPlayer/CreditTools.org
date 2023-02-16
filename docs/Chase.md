@@ -35,21 +35,19 @@ $(document).ready( function () {
       <th>Variable?</th>
       <th>Approx. Sub</th>
       <th>Issuing Bank</th>
-      <th>Link</th>
     </tr>
   </thead>
   <tbody>
     {% for card in site.cards %}
       {% if card.brand == 'Chase' %}
         <tr>
-          <td>{{ card.name }}</td>
+          <td><a href="{{ card.url }}">{{ card.name }}</a></td>
           <td>{{ card.brand }}</td>
           <td>{{ card.annual_fee }}</td>
           <td>{{ card.apr }}</td>
           <td>{{ card.apr_variable }}</td>
           <td>{{ card.approx_current_sub_value }}</td>
           <td>{{ card.issuing_bank }}</td>
-          <td><a href="{{ card.url }}">More info</a></td>
         </tr>
       {% endif %}
     {% endfor %}

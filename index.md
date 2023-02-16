@@ -58,7 +58,7 @@ $(document).ready( function () {
         <td>{{ business.address }}</td>
         <td>{{ business.url }}</td>
     </tr>
-    {% endfor %}
+  {% endfor %}
   </tbody>
 </table>
 
