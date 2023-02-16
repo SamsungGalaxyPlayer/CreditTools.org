@@ -44,19 +44,25 @@ $(document).ready( function () {
 <table id="cards_table">
   <thead>  
     <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Address</th>
-        <th>Info</th>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Annual Fee</th>
+      <th>APR</th>
+      <th>Variable?</th>
+      <th>Approx. Sub</th>
+      <th>Issuing Bank</th>
     </tr>
   </thead>
   <tbody>
   {% for card in site.cards %}
     <tr>
-        <td>{{ business.name }}</td>
-        <td>{{ business.type }}</td>
-        <td>{{ business.address }}</td>
-        <td>{{ business.url }}</td>
+      <td><a href="{{ card.url }}">{{ card.name }}</a></td>
+      <td>{{ card.brand }}</td>
+      <td>{{ card.annual_fee }}</td>
+      <td>{{ card.apr }}</td>
+      <td>{{ card.apr_variable }}</td>
+      <td>{{ card.approx_current_sub_value }}</td>
+      <td>{{ card.issuing_bank }}</td>
     </tr>
   {% endfor %}
   </tbody>
