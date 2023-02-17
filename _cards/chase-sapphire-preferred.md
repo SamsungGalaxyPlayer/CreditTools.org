@@ -10,6 +10,12 @@ issuing_bank: Chase
 url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
 ---
 
-# Title
+# Chase Sapphire Preferred
 
-## Subtitle
+## Pros
+
+This card is great because
+
+## Cons
+
+This card sucks because
