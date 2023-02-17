@@ -1,4 +1,5 @@
 ---
+layout: home
 name: Citi Double Cash
 brand: Citi
 annual_fee: $0

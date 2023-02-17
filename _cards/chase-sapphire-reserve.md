@@ -1,4 +1,5 @@
 ---
+layout: home
 name: Chase Sapphire Reserve
 brand: Chase
 annual_fee: $550
