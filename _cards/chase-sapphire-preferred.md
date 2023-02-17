@@ -1,5 +1,5 @@
 ---
-theme: default
+layout: default
 name: Chase Sapphire Preferred
 brand: Chase
 annual_fee: $95
