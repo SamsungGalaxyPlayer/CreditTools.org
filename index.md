@@ -19,6 +19,68 @@ https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html#jquer
 
 ---
 
+## Proposed initial format
+
+The following items are meant to help identify
+
+```
+---
+layout: home
+name: String
+brand: String
+annual_fee: $
+apr: %-%
+apr_variable: Bool
+approx_current_sub_value: $
+issuing_bank: String
+url: Link
+
+foreign_transaction_fee: %
+car_rental_cdw_type: Primary/Secondary/None
+travel_accident_insurance: Bool
+tip_insurance: Bool
+extended_warranty: Bool
+purchase_protection: Bool
+cell_phone_protection: Bool
+price_protection: Bool
+bag_delay: Bool
+open_membership: Bool
+membership: String
+
+point_or_cb_reward: point/cb
+approx_cpp: Double
+approx_cpp_reasoning: String
+reward_base: Double %/x
+reward_mobilepay: Double %/x
+reward_rent: Double %/x
+reward_gas: Double %/x
+reward_ev: Double %/x
+reward_grocery: Double %/x
+reward_clubstore: Double %/x
+reward:_dining: Double %/x
+reward_drugstore: Double %/x
+reward_bills: Double %/x
+bill_types: String
+reward_travel: Double %/x
+travel_types: String
+reward_air: Double %/x
+reward_hotel: Double %/x
+reward_cruise: Double %/x
+reward_travel_portal: Double %/x
+travel_portal_types: String
+reward_entertainment: Double %/x
+reward_streaming: Double %/x
+reward_rotating: Double %/x
+
+other_credits_max_value: $
+other_credits_types: String
+---
+```
+
+
+
+---
+
 <script type="text/javascript" src="jquery.dataTables.js"></script>
 <script type="text/javascript" src="dataTables.filter.html.js"></script>
 <script type="text/javascript">
