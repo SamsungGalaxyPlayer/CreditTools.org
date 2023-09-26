@@ -21,35 +21,45 @@ https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html#jquer
 
 ## Proposed initial format
 
-The following items are meant to help identify
+This initial format will allow us to create useful summary tables. Additional context about the card can be displayed underneath on individual pages.
 
 ```
 ---
 layout: home
-name: String
-brand: String
+card_name: String
+card_brand: String
 annual_fee: $
-apr: %-%
+card_type: Visa/Mastercard/American Express/Discover
+intro_apr: %
+intro_offer: String  <!-- MAX 140 characters! Additional context can be provided on the card page. -->
+ongoing_apr: %-%
 apr_variable: Bool
+cash_advance_ongoing_apr: %-%
 approx_current_sub_value: $
 issuing_bank: String
 url: Link
 
-foreign_transaction_fee: %
+foreign_transaction_fee: %  <!-- Put 0% if no FTF -->
 car_rental_cdw_type: Primary/Secondary/None
 travel_accident_insurance: Bool
-tip_insurance: Bool
+trip_insurance: Bool
 extended_warranty: Bool
 purchase_protection: Bool
 cell_phone_protection: Bool
-price_protection: Bool
-bag_delay: Bool
+flight_price_protection: Bool
+hotel_price_protection: Bool
+bag_delay_compensation: Bool
+bag_loss_protection: Bool
+free_bag: Bool  <!-- Checked, carry-on, or both -->
+airport_lounge_cardholder_access: Bool
+airport_lounge_guest_access: Bool
+concierge_service: String  <!-- Delete this row if not applicable -->
 open_membership: Bool
-membership: String
+membership: String  <!-- Delete this row if not applicable -->
 
-point_or_cb_reward: point/cb
+point_or_cb_reward: point/cb/none
 approx_cpp: Double
-approx_cpp_reasoning: String
+approx_cpp_reasoning: String <!-- MAX 140 characters! Additional context can be provided on the card page. -->
 reward_base: Double %/x
 reward_mobilepay: Double %/x
 reward_rent: Double %/x
@@ -57,7 +67,7 @@ reward_gas: Double %/x
 reward_ev: Double %/x
 reward_grocery: Double %/x
 reward_clubstore: Double %/x
-reward:_dining: Double %/x
+reward_dining: Double %/x
 reward_drugstore: Double %/x
 reward_bills: Double %/x
 bill_types: String

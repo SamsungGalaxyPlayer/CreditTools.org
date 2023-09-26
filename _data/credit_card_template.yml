@@ -1,0 +1,187 @@
+title: "New Credit Card Submission"
+description: "Provide details for the credit card you'd like to submit. If you prefer to edit details about an existing card, this is the wrong form."
+
+fields:
+  card_name:
+    type: "text"
+    required: true
+  card_brand:
+    type: "text"
+    required: true
+  annual_fee:
+    type: "number"
+    required: true
+  card_type:
+    type: "list"
+    values: ["Visa", "Mastercard", "American Express", "Discover"]
+    required: true
+  intro_apr:
+    type: "text"
+    required: false
+  intro_offer:
+    type: "text"
+    required: false
+    max_length: 140
+  ongoing_apr:
+    type: "text"
+    required: true
+    description: "Enter like '10.5%-34.54%'"
+  apr_variable:
+    type: "boolean"
+    description: "Is the APR variable? If yes variable, then put true, if fixed rate, then put false"
+  cash_advance_ongoing_apr:
+    type: "text"
+  approx_current_sub_value:
+    type: "text"
+  issuing_bank:
+    type: "text"
+    required: true
+  url:
+    type: "url"
+    required: true
+
+  foreign_transaction_fee:
+    type: "text"
+    description: "Put 0% if no FTF"
+    required: true
+  car_rental_cdw_type:
+    type: "list"
+    values:
+      - "Primary"
+      - "Secondary"
+      - "None"
+    required: true
+  travel_accident_insurance:
+    type: "boolean"
+    required: true
+  trip_insurance:
+    type: "boolean"
+    required: true
+  extended_warranty:
+    type: "boolean"
+    required: true
+  purchase_protection:
+    type: "boolean"
+    required: true
+  cell_phone_protection:
+    type: "boolean"
+    required: true
+  flight_price_protection:
+    type: "boolean"
+    required: true
+  hotel_price_protection:
+    type: "boolean"
+    required: true
+  bag_delay_compensation:
+    type: "boolean"
+    required: true
+  bag_loss_protection:
+    type: "boolean"
+    required: true
+  free_bag:
+    type: "boolean"
+    description: "Checked, carry-on, or both"
+    required: true
+  airport_lounge_cardholder_access:
+    type: "boolean"
+    required: true
+  airport_lounge_guest_access:
+    type: "boolean"
+    required: true
+  concierge_service:
+    type: "text"
+    required: false
+  open_membership:
+    type: "boolean"
+    required: true
+  membership:
+    type: "text"
+    required: false
+
+  point_or_cb_reward:
+    type: "list"
+    values:
+      - "point"
+      - "cb"
+      - "none"
+    required: true
+  approx_cpp:
+    type: "text"
+    description: "Enter a double value"
+    required: true
+  approx_cpp_reasoning:
+    type: "text"
+    title: "Approximate cent-per-point-value reasoning"
+    description: "MAX 140 characters! Additional context can be provided on the card page. For cash-back cards, either leave this blank or simply say 'Pure cash back'"
+    required: true
+  reward_base:
+    type: "number"
+    required: true
+  reward_mobilepay:
+    type: "number"
+    required: true
+  reward_rent:
+    type: "number"
+    required: true
+  reward_gas:
+    type: "number"
+    required: true
+  reward_ev:
+    type: "number"
+    required: true
+  reward_grocery:
+    type: "number"
+    required: true
+  reward_clubstore:
+    type: "number"
+    required: true
+  reward_dining:
+    type: "number"
+    required: true
+  reward_drugstore:
+    type: "number"
+    required: true
+  reward_bills:
+    type: "number"
+    required: true
+  bill_types:
+    type: "number"
+    required: true
+  reward_travel:
+    type: "number"
+    required: true
+  travel_types:
+    type: "number"
+    required: true
+  reward_air:
+    type: "number"
+    required: true
+  reward_hotel:
+    type: "number"
+    required: true
+  reward_cruise:
+    type: "number"
+    required: true
+  reward_travel_portal:
+    type: "number"
+    required: true
+  travel_portal_types:
+    type: "number"
+    required: true
+  reward_entertainment:
+    type: "number"
+    required: true
+  reward_streaming:
+    type: "number"
+    required: true
+  reward_rotating:
+    type: "number"
+    required: true
+  
+  other_credits_max_value:
+    type: "number"
+    description: "Enter the value in $"
+    required: false
+  other_credits_types:
+    type: "text"
+    required: false
