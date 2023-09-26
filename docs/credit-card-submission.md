@@ -9,24 +9,21 @@ layout: default
   {% for field, context in site.data.credit_card_template.fields %}
     {% assign title = field | capitalize %}
     {% assign is_required = context.required | default: true %}
-    <div class="form-group">
-        <label for="{{ field }}">{{ title }}</label>
-        
-        {% if context.type == "boolean" %}
-            <select name="{{ field }}" id="{{ field }}">
-                <option value="true">True</option>
-                <option value="false">False</option>
-            </select>
-        {% elsif context.type == "list" %}
-            <select name="{{ field }}" id="{{ field }}">
-                {% for value in context.values %}
-                    <option value="{{ value }}">{{ value }}</option>
-                {% endfor %}
-            </select>
-        {% else %}
-            <input type="{{ context.type }}" name="{{ field }}" id="{{ field }}" {% if context.max_length %}maxlength="{{ context.max_length }}"{% endif %} {% if is_required %}required{% endif %}>
-        {% endif %}
-    </div>
+    <label for="{{ field }}">{{ title }}</label>
+    {% if context.type == "boolean" %}
+        <select name="{{ field }}" id="{{ field }}">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+    {% elsif context.type == "list" %}
+        <select name="{{ field }}" id="{{ field }}">
+            {% for value in context.values %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+    {% else %}
+        <input type="{{ context.type }}" name="{{ field }}" id="{{ field }}" {% if context.max_length %}maxlength="{{ context.max_length }}"{% endif %} {% if is_required %}required{% endif %}>
+    {% endif %}
   {% endfor %}
   <button type="button" onclick="generateGitHubIssueURL()">Generate GitHub Issue URL</button>
 </form>
