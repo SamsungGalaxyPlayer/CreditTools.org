@@ -8,6 +8,11 @@ fields:
   card_brand:
     type: "text"
     required: true
+  card_summary:
+    type: "text"
+    required: true
+    title: "Card summary"
+    description: "MAX 140 characters! Additional context can be provided on the card page. Summarize the card for display in bank tables."
   annual_fee:
     type: "number"
     required: true

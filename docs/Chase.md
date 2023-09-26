@@ -23,10 +23,8 @@ $(document).ready( function () {
     <tr>
       <th>Name</th>
       <th>Annual Fee</th>
-      <th>APR</th>
-      <th>Variable?</th>
       <th>Approx. Sub</th>
-      <th>Issuing Bank</th>
+      <th>Card Summary</th>
     </tr>
   </thead>
   <tbody>
@@ -35,10 +33,8 @@ $(document).ready( function () {
         <tr>
           <td><a href="{{ card.url }}">{{ card.name }}</a></td>
           <td>{{ card.annual_fee }}</td>
-          <td>{{ card.apr }}</td>
-          <td>{{ card.apr_variable }}</td>
           <td>{{ card.approx_current_sub_value }}</td>
-          <td>{{ card.issuing_bank }}</td>
+          <td>{{ card.card_summary }}</td>
         </tr>
       {% endif %}
     {% endfor %}

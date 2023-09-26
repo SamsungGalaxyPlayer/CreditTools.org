@@ -2,6 +2,7 @@
 layout: home
 name: Chase Sapphire Preferred
 brand: Chase
+card_summary: The CSP is great for restaurants and okay for travel.
 annual_fee: $95
 apr: 20.24%-27.24%
 apr_variable: True
