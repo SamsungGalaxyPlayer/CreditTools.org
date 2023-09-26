@@ -1,5 +1,5 @@
 ---
-layout: default
+title: "Submit new card"
 ---
 
 <h1>{{ site.data.credit_card_template.title }}</h1>
