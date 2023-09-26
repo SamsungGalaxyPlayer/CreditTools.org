@@ -6,7 +6,9 @@ layout: default
 <p>{{ site.data.credit_card_template.description }}</p>
 
 <form id="creditCardSubmissionForm">
-  {% for field, context in site.data.credit_card_template.fields %}
+  {% for item in site.data.credit_card_template.fields %}
+    {% assign field = item[0] %}
+    {% assign context = item[1] %}
     {% assign title = field | capitalize %}
     {% assign is_required = context.required | default: true %}
     <label for="{{ field }}">{{ title }}</label>
