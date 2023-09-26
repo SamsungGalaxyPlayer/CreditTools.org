@@ -7,8 +7,7 @@ permalink: pretty
 url: https://credittools.org
 
 aux_links:
-  "Custom Styles":
-    - "/assets/custom-styles.css"
+  Propose Change: https://github.com
 
 collections:
   cards:

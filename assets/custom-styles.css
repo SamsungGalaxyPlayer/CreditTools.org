@@ -1,0 +1,26 @@
+.form-layout {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-layout label, .form-layout select, .form-layout input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 8px;
+}
+
+.form-layout button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-layout button:hover {
+  background-color: #2980b9;
+}
