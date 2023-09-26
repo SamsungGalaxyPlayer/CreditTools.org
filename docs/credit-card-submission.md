@@ -12,7 +12,7 @@ layout: form-layout
     {% assign context = item[1] %}
     {% assign title = field | capitalize %}
     {% assign is_required = context.required | default: true %}
-    <label for="{{ field }}">{{ title }}</label>
+    <label for="{{ field }}">{{ title }}{% if is_required %}<span class="required-asterisk">*</span>{% endif %}</label>
     {% if context.type == "boolean" %}
         <select name="{{ field }}" id="{{ field }}">
             <option value="true">True</option>
@@ -32,7 +32,22 @@ layout: form-layout
 </form>
 
 <script>
+function validateForm() {
+    const formData = new FormData(document.getElementById('creditCardSubmissionForm'));
+    for (let pair of formData.entries()) {
+        if (pair[1] === "" && document.getElementById(pair[0]).required) {
+            alert(pair[0] + " is a required field!");
+            return false;
+        }
+    }
+    return true;
+}
+
 function generateGitHubIssueURL() {
+    if (!validateForm()) {
+        return;
+    }
+
     let baseURL = "https://github.com/{owner}/{repo}/issues/new?";
     let title = "New Card Submission: " + document.getElementById('card_name').value;
     let body = "";

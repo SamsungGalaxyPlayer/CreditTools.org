@@ -24,3 +24,8 @@
 .form-layout button:hover {
   background-color: #2980b9;
 }
+
+.required-asterisk {
+  color: red;
+  margin-left: 4px;
+}
