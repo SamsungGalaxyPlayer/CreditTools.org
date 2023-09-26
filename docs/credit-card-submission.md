@@ -10,9 +10,13 @@ layout: form-layout
   {% for item in site.data.credit_card_template.fields %}
     {% assign field = item[0] %}
     {% assign context = item[1] %}
-    {% assign title = field | capitalize %}
+    {% assign title = context.title | default: field | capitalize %}
+    {% assign description = context.description %}
     {% assign is_required = context.required | default: true %}
     <label for="{{ field }}">{{ title }}{% if is_required %}<span class="required-asterisk">*</span>{% endif %}</label>
+    {% if description %}
+    <p class="field-description">{{ description }}</p>
+    {% endif %}
     {% if context.type == "boolean" %}
         <select name="{{ field }}" id="{{ field }}">
             <option value="true">True</option>
