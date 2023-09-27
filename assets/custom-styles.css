@@ -5,11 +5,20 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.form-layout label, .form-layout select, .form-layout input {
+.form-layout label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-layout select, .form-layout input {
   display: block;
   width: 100%;
   margin-bottom: 15px;
   padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .form-layout button {
@@ -19,6 +28,7 @@
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-radius: 4px;
 }
 
 .form-layout button:hover {
@@ -32,7 +42,7 @@
 
 .field-description {
   font-size: 0.9em;
-  margin-top: 5px;
+  margin-top: 2px;
   margin-bottom: 10px;
-  color: #555;
+  color: #777;
 }
