@@ -1,113 +1,57 @@
-# just-the-docs-template
+# CreditTools.org
 
-This is a *bare-minimum* template to create a [Jekyll] site that:
+Thanks for visiting the README for [CreditTools.org](https://credittools.org)! You can learn more about [CreditTools.org](https://credittools.org) on the website. This GitHub README is written for an audience that wishes to contribute to the website. If you're here to learn how to contribute to the website, thank you! <3
 
-- uses the [Just the Docs] theme;
-- can be built and published on [GitHub Pages];
-- can be built and previewed locally, and published on other platforms.
+As non-programmers, we have purposefully designed these contribution guidelines to be as simple as possible, and we have aimed these guides at someone who is an enthusiast who is willing to learn a little bit about GitHub, but not enough to commit to a new developer career.
 
-More specifically, the created site:
+## Adding a new credit card
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
+We have created a form to make it simple to submit research on an ***unlisted*** card. You can access it here: https://credittools.org/docs/credit-card-submission/
 
-To get started with creating a site, just click "[use this template]"!
+Research submission requires a GitHub account to open a new issue with the new credit card information.
 
-After completing the creation of your new site on GitHub, update it as needed:
+Programmers: you open a PR to place the required data for the card in `_cards/` without opening an issue. Please make a new pull request for each card individually, in case people have comments on them.
 
-## Replace the content of the template pages
+## Adding a new brand/bank/company
 
-Update the following files to your own content:
+Generally, you will not need to add new companies. In the review process, I will create basic pages from a template that will at least index the brand/bank/company that you have provided research on the card for, if it does not exist already.
 
-- `index.md` (your new home page)
-- `README.md` (information for those who access your site repo on GitHub)
+Programmers: you can add a new page in `docs/` with the brand/bank/company name. You can use any other brand as a template.
 
-## Changing the version of the theme and/or Jekyll
+## Updating info on an existing credit card
 
-Simply edit the relevant line(s) in the `Gemfile`.
+Open an issue or create a pull request with the changes. Data on each card is available under `_cards/`.
 
-## Adding a plugin
+## Updating info on a specific brand/bank/company
 
-The Just the Docs theme automatically includes the [`jekyll-seo-tag`] plugin.
+Open an issue or create a pull request with the changes. Data on each brand/bank/company is available under `docs/`.
 
-To add an extra plugin, you need to add it in the `Gemfile` *and* in `_config.yml`. For example, to add [`jekyll-default-layout`]:
+## Card metadata template
 
-- Add the following to your site's `Gemfile`:
+We have created a template in `_data/credit_card_template.yml` to serve as the main requirements for adding new cards. This can be improved with a pull request and supportive reasoning/evidence. Please bear in mind that minor changes will likely not be included, since a change to these which will materially change the data for cards can take a lot of review time, since each card needs to be reviewed separately.
 
-  ```ruby
-  gem "jekyll-default-layout"
-  ```
+## What about debit cards, bank accounts, etc?
 
-- And add the following to your site's `_config.yml`:
+Great question! The scope of this website is pretty narrow for now, and it's quite focused on the USA market. In the future, we would like to better design the website to account for different products and different countries. However, unless you are a very motivated person with strong development skills (or, at least better than my "skills"), please hold off on these other contributions until we get at least a basic database of the USA credit cards together.
 
-  ```yaml
-  plugins:
-    - jekyll-default-layout
-  ```
+## What about other languages?
 
-Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
+Also a great question! I have little experience with this. If you want to help us out, we would be excited to learn the best way forward to support this. We use [Just the Docs](https://github.com/just-the-docs/just-the-docs).
 
-## Publishing your site on GitHub Pages
+## Attribution and credits
 
-1.  If your created site is `YOUR-USERNAME/YOUR-SITE-NAME`, update `_config.yml` to:
+We would like to thank the [Just the Docs](https://github.com/just-the-docs/just-the-docs) contributors for building a solid website foundation. We would like to thank all of the [CreditTools.org](https://credittools.org) contributors who believe in an open-source, not-for-profit, and educational website for credit card information. We would like to thank GitHub for allowing us to host this static website with GitHub pages.
 
-    ```yaml
-    title: YOUR TITLE
-    description: YOUR DESCRIPTION
-    theme: just-the-docs
+## Getting help
 
-    url: https://YOUR-USERNAME.github.io/YOUR-SITE-NAME
+The sad truth is that credit cards - despite their incredible utility to some - also contribute to difficult situations for millions of people in the United States and the rest of the world. Further, credit cards arguably provide benefits to people in ethically contentious ways: capitalizing on their function as a "middleman" in transactions, and extracting money out of the economy when no such middleman needs to strictly exist.
 
-    aux_links: # remove if you don't want this link to appear on your pages
-      Template Repository: https://github.com/YOUR-USERNAME/YOUR-SITE-NAME
-    ```
+While we believe that credit card and related payment companies *can* be a "net positive" with improved payment efficiencies, better access to credit, and other positive factors, we are not oblivious to the fact that the for-profit credit card industry has left many people harmed in its wake, especially minorities.
 
-2.  Push your updated `_config.yml` to your site on GitHub.
+If you need help paying your credit card debit, getting access to credit, or understanding credit card terms, there are free resources available. We are not affiliated with these groups, but here a few places to start:
 
-3.  In your newly created repo on GitHub:
-    - go to the `Settings` tab -> `Pages` -> `Build and deployment`, then select `Source`: `GitHub Actions`.
-    - if there were any failed Actions, go to the `Actions` tab and click on `Re-run jobs`.
+* https://consumerfinance.gov - the official website for the Consumer Financial Protection Bureau, a U.S. government agency dedicated to making sure you are treated fairly by banks, lenders and other financial institutions.
 
-## Building and previewing your site locally
+* https://annualcreditreport.com - the system mandated by the federal goverment through which you can get ***completely free*** credit reports from all three agencies: Equifax, Experian, and TransUnion. Historically, you could get one free credit report per agency per year, but all three have offered more frequent free reports in recent years.
 
-Assuming [Jekyll] and [Bundler] are installed on your computer:
-
-1.  Change your working directory to the root directory of your site.
-
-2.  Run `bundle install`.
-
-3.  Run `bundle exec jekyll serve` to build your site and preview it at `localhost:4000`.
-
-    The built site is stored in the directory `_site`.
-
-## Publishing your built site on a different platform
-
-Just upload all the files in the directory `_site`.
-
-## Customization
-
-You're free to customize sites that you create with this template, however you like!
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-## Licensing and Attribution
-
-This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
-
-The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Jekyll]: https://jekyllrb.com
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[Bundler]: https://bundler.io
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
-[`jekyll-default-layout`]: https://github.com/benbalter/jekyll-default-layout
-[`jekyll-seo-tag`]: https://jekyll.github.io/jekyll-seo-tag
-[MIT License]: https://en.wikipedia.org/wiki/MIT_License
-[starter workflows]: https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
-[actions/starter-workflows]: https://github.com/actions/starter-workflows/blob/main/LICENSE
+* https://mymoney.gov - the official US government website for the Federal Financial Literacy and Education Commission (FLEC), which is collaborating to strengthen financial capability and increase access to financial services for all Americans.

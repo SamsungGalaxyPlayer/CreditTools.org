@@ -4,6 +4,10 @@ title: "Chase"
 
 <h1>{{ page.title }}</h1>
 
+Chase is known for its "trifecta", or the pairing of at least one Chase Sapphire card (the Sapphire Reserve or Sapphire Preferred) with two other Chase cards. With one of the Sapphire cards, you can maximize the points earned with other cards by transferring them to other partners or using other reward-enhancing techniques.
+
+You do not necessarily need exactly three Chase cards to maximize your rewards potential. Depending on your needs (and your tolerance for additional cards), it may be better to only have one Chase card, or to have more than three. Your mileage will vary!
+
 ## All {{ page.title }} Cards
 
 <!-- Load the necessary styles and scripts for DataTables -->
