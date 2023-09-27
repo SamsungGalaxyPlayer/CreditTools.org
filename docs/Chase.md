@@ -2,7 +2,9 @@
 title: "Chase"
 ---
 
-# Chase
+<h1>{{ page.name }}</h1>
+
+## All {{ page.name }} Cards
 
 <!-- Load the necessary styles and scripts for DataTables -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
@@ -12,13 +14,13 @@ title: "Chase"
 <!-- DataTables Initialization -->
 <script>
 $(document).ready( function () {
-    $('#chase_cards_table').DataTable({
+    $('#{{ page.name }}_cards_table').DataTable({
       ordering: true
     });
 } );
 </script>
 
-<table id="chase_cards_table">
+<table id="{{ page.name }}_cards_table">
   <thead>
     <tr>
       <th>Name</th>
@@ -29,7 +31,7 @@ $(document).ready( function () {
   </thead>
   <tbody>
     {% for card in site.cards %}
-      {% if card.brand == 'Chase' %}
+      {% if card.brand == {{ page.name }} %}
         <tr>
           <td><a href="{{ card.url }}">{{ card.name }}</a></td>
           <td>{{ card.annual_fee }}</td>
