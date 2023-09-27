@@ -31,7 +31,7 @@ $(document).ready( function () {
   </thead>
   <tbody>
     {% for card in site.cards %}
-      {% if card.brand == {{ page.title }} %}
+      {% if card.brand == page.title %}
         <tr>
           <td><a href="{{ card.url }}">{{ card.name }}</a></td>
           <td>{{ card.annual_fee }}</td>
