@@ -11,7 +11,7 @@ issuing_bank: Chase
 url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
 ---
 
-# Chase Sapphire Preferred
+<h1>{{ page.name }}</h1>
 
 ## Pros
 

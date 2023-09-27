@@ -11,7 +11,7 @@ issuing_bank: Citi
 url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
 ---
 
-# Title
+<h1>{{ page.name }}</h1>
 
 ## Subtitle
 
