@@ -18,7 +18,10 @@ url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
 # Specs
 
 {% for field, context in site.data.credit_card_template.fields %}
-  {% assign title = context.title | default: field %}
-  **{{ title }}:** {{ page[field] }}
+  {% if page[field] %}
+    {% assign title = context.title | default: field | capitalize %}
+    **{{ title }}:** {{ page[field] }}
+  {% endif %}
 {% endfor %}
+
 
