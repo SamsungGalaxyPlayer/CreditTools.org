@@ -2,7 +2,7 @@
 title: "Chase"
 ---
 
-<h1>{{ page.name }}</h1>
+<h1>{{ page.title }}</h1>
 
 ## All {{ page.name }} Cards
 
@@ -14,13 +14,13 @@ title: "Chase"
 <!-- DataTables Initialization -->
 <script>
 $(document).ready( function () {
-    $('#{{ page.name }}_cards_table').DataTable({
+    $('#{{ page.title }}_cards_table').DataTable({
       ordering: true
     });
 } );
 </script>
 
-<table id="{{ page.name }}_cards_table">
+<table id="{{ page.title }}_cards_table">
   <thead>
     <tr>
       <th>Name</th>
@@ -31,7 +31,7 @@ $(document).ready( function () {
   </thead>
   <tbody>
     {% for card in site.cards %}
-      {% if card.brand == {{ page.name }} %}
+      {% if card.brand == {{ page.title }} %}
         <tr>
           <td><a href="{{ card.url }}">{{ card.name }}</a></td>
           <td>{{ card.annual_fee }}</td>

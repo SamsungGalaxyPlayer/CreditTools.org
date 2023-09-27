@@ -2,7 +2,7 @@
 title: "Citi"
 ---
 
-<h1>{{ page.name }}</h1>
+<h1>{{ page.title }}</h1>
 
 Citi is best known for its simple credit cards, which makes it easy for credit card newcomers to earn excellent rewards. With additional transfer partner effort, Citi cards can offer additional values. However, make sure to avoid common points redemption pitfalls.
 
@@ -16,13 +16,13 @@ Citi is best known for its simple credit cards, which makes it easy for credit c
 <!-- DataTables Initialization -->
 <script>
 $(document).ready( function () {
-    $('#{{ page.name }}_cards_table').DataTable({
+    $('#{{ page.title }}_cards_table').DataTable({
       ordering: true
     });
 } );
 </script>
 
-<table id="{{ page.name }}_cards_table">
+<table id="{{ page.title }}_cards_table">
   <thead>
     <tr>
       <th>Name</th>
