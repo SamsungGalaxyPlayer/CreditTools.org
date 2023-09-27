@@ -5,49 +5,72 @@ fields:
   card_name:
     type: "text"
     required: true
+    title: "Card Name"
+    description: "Enter the official name of the credit card."
   card_brand:
     type: "text"
     required: true
+    title: "Card Brand"
+    description: "Specify the brand or company of the credit card."
   card_summary:
     type: "text"
     required: true
-    title: "Card summary"
+    title: "Card Summary"
     description: "MAX 140 characters! Additional context can be provided on the card page. Summarize the card for display in bank tables."
   annual_fee:
     type: "number"
     required: true
+    title: "Annual Fee"
+    description: "State the annual fee charged for the card. Enter '0' if there is no fee."
   card_type:
     type: "list"
     values: ["Visa", "Mastercard", "American Express", "Discover"]
     required: true
+    title: "Card Type"
+    description: "Select the type of card from the available options."
   intro_apr:
     type: "text"
     required: false
+    title: "Introductory APR"
+    description: "Specify the introductory annual percentage rate, if applicable."
   intro_offer:
     type: "text"
     required: false
     max_length: 140
+    title: "Introductory Offer"
+    description: "Detail any introductory offers related to the card. Maximum 140 characters."
   ongoing_apr:
     type: "text"
     required: true
-    description: "Enter like '10.5%-34.54%'"
+    title: "Ongoing APR"
+    description: "Enter like '10.5%-34.54%'. Specify the standard annual percentage rate after the introductory period."
   apr_variable:
     type: "boolean"
-    description: "Is the APR variable? If yes variable, then put true, if fixed rate, then put false"
+    title: "Variable APR?"
+    description: "Is the APR variable? If yes variable, then put true, if fixed rate, then put false."
   cash_advance_ongoing_apr:
     type: "text"
+    title: "Cash Advance Ongoing APR"
+    description: "Specify the annual percentage rate for cash advances, if different from the ongoing APR."
   approx_current_sub_value:
     type: "text"
+    title: "Approximate Current Subscription Value"
+    description: "Provide an estimated value for current offers or subscription services related to the card."
   issuing_bank:
     type: "text"
     required: true
+    title: "Issuing Bank"
+    description: "State the bank or financial institution that issues the card."
   url:
     type: "url"
     required: true
+    title: "URL"
+    description: "Provide a direct link to the official page or application for the credit card."
   foreign_transaction_fee:
     type: "text"
-    description: "Put 0% if no FTF"
     required: true
+    title: "Foreign Transaction Fee"
+    description: "State the fee for foreign transactions. Put 0% if there is no fee."
   car_rental_cdw_type:
     type: "list"
     values:
@@ -55,52 +78,84 @@ fields:
       - "Secondary"
       - "None"
     required: true
+    title: "Car Rental Collision Damage Waiver (CDW) Type"
+    description: "Specify the type of collision damage waiver coverage for car rentals."
   travel_accident_insurance:
     type: "boolean"
     required: true
+    title: "Travel Accident Insurance"
+    description: "Does the card offer travel accident insurance?"
   trip_insurance:
     type: "boolean"
     required: true
+    title: "Trip Insurance"
+    description: "Does the card provide trip insurance coverage?"
   extended_warranty:
     type: "boolean"
     required: true
+    title: "Extended Warranty"
+    description: "Is an extended warranty offered on purchases made with the card?"
   purchase_protection:
     type: "boolean"
     required: true
+    title: "Purchase Protection"
+    description: "Are purchases protected against damage or theft?"
   cell_phone_protection:
     type: "boolean"
     required: true
+    title: "Cell Phone Protection"
+    description: "Is there protection offered against damage or theft of cell phones?"
   flight_price_protection:
     type: "boolean"
     required: true
+    title: "Flight Price Protection"
+    description: "Is there coverage if the flight price drops after purchase?"
   hotel_price_protection:
     type: "boolean"
     required: true
+    title: "Hotel Price Protection"
+    description: "Is there coverage if the hotel price drops after booking?"
   bag_delay_compensation:
     type: "boolean"
     required: true
+    title: "Bag Delay Compensation"
+    description: "Is there compensation if baggage is delayed?"
   bag_loss_protection:
     type: "boolean"
     required: true
+    title: "Bag Loss Protection"
+    description: "Is there protection and compensation for lost baggage?"
   free_bag:
     type: "boolean"
-    description: "Checked, carry-on, or both"
     required: true
+    title: "Free Bag Allowance"
+    description: "Does the card offer free checked bags, carry-ons, or both?"
   airport_lounge_cardholder_access:
     type: "boolean"
     required: true
+    title: "Airport Lounge Cardholder Access"
+    description: "Does the cardholder get access to airport lounges?"
   airport_lounge_guest_access:
     type: "boolean"
     required: true
+    title: "Airport Lounge Guest Access"
+    description: "Can the cardholder bring guests into airport lounges?"
   concierge_service:
     type: "text"
     required: false
+    title: "Concierge Service"
+    description: "Describe the concierge service, if offered. E.g., '24/7 Global Assistance'."
   open_membership:
     type: "boolean"
     required: true
+    title: "Open Membership"
+    description: "Is this card available for anyone to apply, or is a specific membership required?"
   membership:
     type: "text"
     required: false
+    max_length: 140
+    title: "Membership Requirement"
+    description: "Specify any particular membership or association required to apply for this card."
   point_or_cb_reward:
     type: "list"
     values:
@@ -108,82 +163,135 @@ fields:
       - "cb"
       - "none"
     required: true
+    title: "Reward Type"
+    description: "Choose the type of reward: point, cash-back (cb), or none."
   approx_cpp:
     type: "text"
-    description: "Enter a double value"
     required: true
+    title: "Approximate Cent-per-point Value"
+    description: "Enter the approximate value of each point in cents (as a double value)."
   approx_cpp_reasoning:
     type: "text"
-    title: "Approximate cent-per-point-value reasoning"
-    description: "MAX 140 characters! Additional context can be provided on the card page. For cash-back cards, either leave this blank or simply say 'Pure cash back'"
     required: true
+    max_length: 140
+    title: "Approximate Cent-per-point Value Reasoning"
+    description: "Briefly explain the reasoning behind the approximate value assigned. For cash-back cards, leave blank or state 'Pure cash back'."
   reward_base:
-    type: "number"
+    type: "text"
     required: true
+    title: "Base Reward Rate (%/Points)"
+    description: "Enter the standard reward rate for all purchases, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_mobilepay:
-    type: "number"
+    type: "text"
     required: true
+    title: "Mobile Pay Reward Rate (%/Points)"
+    description: "Enter the reward rate for mobile pay transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_rent:
-    type: "number"
+    type: "text"
     required: true
+    title: "Rent Reward Rate (%/Points)"
+    description: "Enter the reward rate for rent transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_gas:
-    type: "number"
+    type: "text"
     required: true
+    title: "Gas Reward Rate (%/Points)"
+    description: "Enter the reward rate for gas transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_ev:
-    type: "number"
+    type: "text"
     required: true
+    title: "EV Charging Reward Rate (%/Points)"
+    description: "Enter the reward rate for EV charging transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_grocery:
-    type: "number"
+    type: "text"
     required: true
+    title: "Grocery Reward Rate (%/Points)"
+    description: "Enter the reward rate for grocery transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_clubstore:
-    type: "number"
+    type: "text"
     required: true
+    title: "Club Store Reward Rate (%/Points)"
+    description: "Enter the reward rate for club store transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_dining:
-    type: "number"
+    type: "text"
     required: true
+    title: "Dining Reward Rate (%/Points)"
+    description: "Enter the reward rate for dining transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_drugstore:
-    type: "number"
+    type: "text"
     required: true
+    title: "Drugstore Reward Rate (%/Points)"
+    description: "Enter the reward rate for drugstore transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_bills:
-    type: "number"
+    type: "text"
     required: true
+    title: "Bills Reward Rate (%/Points)"
+    description: "Enter the reward rate for bill payments, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   bill_types:
-    type: "number"
+    type: "text"
     required: true
+    max_length: 140
+    title: "Bill Types"
+    description: "Specify the types of bills that earn the associated reward rate."
   reward_travel:
-    type: "number"
+    type: "text"
     required: true
+    title: "Travel Reward Rate (%/Points)"
+    description: "Enter the reward rate for general travel transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   travel_types:
-    type: "number"
+    type: "text"
     required: true
+    max_length: 140
+    title: "Travel Types"
+    description: "Specify the types of travel expenses that earn the associated reward rate."
   reward_air:
-    type: "number"
+    type: "text"
     required: true
+    title: "Airfare Reward Rate (%/Points)"
+    description: "Enter the reward rate for airfare transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_hotel:
-    type: "number"
+    type: "text"
     required: true
+    title: "Hotel Reward Rate (%/Points)"
+    description: "Enter the reward rate for hotel bookings, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_cruise:
-    type: "number"
+    type: "text"
     required: true
+    title: "Cruise Reward Rate (%/Points)"
+    description: "Enter the reward rate for cruise bookings, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_travel_portal:
-    type: "number"
+    type: "text"
     required: true
+    title: "Travel Portal Reward Rate (%/Points)"
+    description: "Enter the reward rate for bookings via the card's travel portal, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   travel_portal_types:
-    type: "number"
+    type: "text"
     required: true
+    max_length: 140
+    title: "Travel Portal Types"
+    description: "Specify the types of travel bookings through the card's portal that earn the associated reward rate."
   reward_entertainment:
-    type: "number"
+    type: "text"
     required: true
+    title: "Entertainment Reward Rate (%/Points)"
+    description: "Enter the reward rate for entertainment transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_streaming:
-    type: "number"
+    type: "text"
     required: true
+    title: "Streaming Services Reward Rate (%/Points)"
+    description: "Enter the reward rate for streaming service subscriptions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   reward_rotating:
-    type: "number"
+    type: "text"
     required: true
+    title: "Rotating Categories Reward Rate (%/Points)"
+    description: "Enter the reward rate for rotating category transactions, in percentage or points. For example, '5%' or '5x'. Do not account for redemption values."
   other_credits_max_value:
-    type: "number"
-    description: "Enter the value in $"
+    type: "text"
     required: false
+    title: "Other Credits Maximum Value ($)"
+    description: "Specify the maximum monetary value of other credits provided by the card."
   other_credits_types:
     type: "text"
     required: false
+    max_length: 140
+    title: "Types of Other Credits"
+    description: "Detail the types of credits or benefits that are provided outside of the standard rewards."
