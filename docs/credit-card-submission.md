@@ -13,25 +13,29 @@ layout: form-layout
     {% assign title = context.title | default: field | capitalize %}
     {% assign description = context.description %}
     {% assign is_required = context.required | default: true %}
-    <label for="{{ field }}">{{ title }}{% if is_required %}<span class="required-asterisk">*</span>{% endif %}</label>
-    {% if description %}
-    <p class="field-description">{{ description }}</p>
-    {% endif %}
-    {% if context.type == "boolean" %}
+    
+    <div class="field-group"> <!-- This is the wrapping div -->
+        <label for="{{ field }}">{{ title }}{% if is_required %}<span class="required-asterisk">*</span>{% endif %}</label>
+        {% if description %}
+        <p class="field-description">{{ description }}</p>
+        {% endif %}
+        {% if context.type == "boolean" %}
         <select name="{{ field }}" id="{{ field }}">
             <option value="true">True</option>
             <option value="false">False</option>
         </select>
-    {% elsif context.type == "list" %}
+        {% elsif context.type == "list" %}
         <select name="{{ field }}" id="{{ field }}">
             {% for value in context.values %}
-                <option value="{{ value }}">{{ value }}</option>
+            <option value="{{ value }}">{{ value }}</option>
             {% endfor %}
         </select>
-    {% else %}
+        {% else %}
         <input type="{{ context.type }}" name="{{ field }}" id="{{ field }}" {% if context.max_length %}maxlength="{{ context.max_length }}"{% endif %} {% if is_required %}required{% endif %}>
-    {% endif %}
-  {% endfor %}
+        {% endif %}
+    </div>
+{% endfor %}
+
   <button type="button" onclick="generateGitHubIssueURL()">Generate GitHub Issue URL</button>
 </form>
 
