@@ -1,5 +1,5 @@
-title: New Project
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: CreditTools.org
+description: CreditTools.org is a not-for-profit website that aims to educate individuals on good credit card and other financial habits. It aims to be the definitive free resource on credit cards.
 theme: just-the-docs
 
 permalink: pretty
@@ -16,3 +16,11 @@ collections:
 plugins:
   - jekyll-default-layout
   - jekyll-seo-tag
+
+# Optional callouts. To use: {: .warning } before paragraph
+callouts:
+  warning:
+    title: Warning
+    color: red
+  friendly:
+    color: blue

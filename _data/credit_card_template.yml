@@ -44,7 +44,6 @@ fields:
   url:
     type: "url"
     required: true
-
   foreign_transaction_fee:
     type: "text"
     description: "Put 0% if no FTF"
@@ -102,7 +101,6 @@ fields:
   membership:
     type: "text"
     required: false
-
   point_or_cb_reward:
     type: "list"
     values:
@@ -182,7 +180,6 @@ fields:
   reward_rotating:
     type: "number"
     required: true
-  
   other_credits_max_value:
     type: "number"
     description: "Enter the value in $"

@@ -1,21 +1,16 @@
 ---
-title: Welcome to my new project!
+title: Welcome to CreditTools.org!
 layout: home
 ---
 
-I am starting with DataTables:
+CreditTools.org is a not-for-profit website that aims to educate individuals on good credit card and other financial habits. It aims to be the definitive free resource on credit cards.
 
-https://datatables.net/forums/discussion/73297/column-widths-for-datatables-on-just-the-docs-github-page
+{: .friendly}
+CreditTools.org does NOT provide financial or legal advice. All this content is for education purposes only.
 
-https://talk.jekyllrb.com/t/filter-page-functionality-ebay-amazon-style/1251/
+CreditTools.org is [open source]() on GitHub, so anyone can [propose changes](). Your help is much appreciated!
 
-https://jekyllrb.com/docs/collections/
-
-https://datatables.net/plug-ins/filtering/
-
-https://just-the-docs.github.io/just-the-docs/docs/ui-components/tables/
-
-https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html#jquery-datatables
+Get started by clicking on one of the items to the left of the screen (or in the navbar on mobile).
 
 ---
 

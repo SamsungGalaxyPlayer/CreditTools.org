@@ -4,24 +4,21 @@ title: "Citi"
 
 # Citi
 
-<script type="text/javascript" src="jquery.dataTables.js"></script>
-<script type="text/javascript" src="dataTables.filter.html.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#example').dataTable( {
-            "columnDefs": [
-                { type: "annual_fee", targets: 0 }
-            ]
-        } );
-    } );
-</script>
+Citi is best known for its simple credit cards, which makes it easy for credit card newcomers to earn excellent rewards. With additional transfer partner effort, Citi cards can offer additional values. However, make sure to avoid common points redemption pitfalls.
 
+## All Citi Cards
+
+<!-- Load the necessary styles and scripts for DataTables -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
+
+<!-- DataTables Initialization -->
 <script>
 $(document).ready( function () {
-    $('#citi_cards_table').DataTable();
+    $('#citi_cards_table').DataTable({
+      ordering: true
+    });
 } );
 </script>
 
@@ -29,12 +26,9 @@ $(document).ready( function () {
   <thead>
     <tr>
       <th>Name</th>
-      <th>Brand</th>
       <th>Annual Fee</th>
-      <th>APR</th>
-      <th>Variable?</th>
       <th>Approx. Sub</th>
-      <th>Issuing Bank</th>
+      <th>Card Summary</th>
     </tr>
   </thead>
   <tbody>
@@ -42,14 +36,15 @@ $(document).ready( function () {
       {% if card.brand == 'Citi' %}
         <tr>
           <td><a href="{{ card.url }}">{{ card.name }}</a></td>
-          <td>{{ card.brand }}</td>
           <td>{{ card.annual_fee }}</td>
-          <td>{{ card.apr }}</td>
-          <td>{{ card.apr_variable }}</td>
           <td>{{ card.approx_current_sub_value }}</td>
-          <td>{{ card.issuing_bank }}</td>
+          <td>{{ card.card_summary }}</td>
         </tr>
       {% endif %}
     {% endfor %}
   </tbody>
 </table>
+
+## ThankYou Reward Points
+
+Citi's points are called ThankYou Rewards. ThankYou rewards are typically worth $0.01, but they can be worth less if you are not careful, or they can be worth more with careful planning. We value Citi points at $0.01 since most people use Citi points like this, but it's possible to earn far more than this.
