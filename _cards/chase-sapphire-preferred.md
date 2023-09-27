@@ -1,5 +1,4 @@
 ---
-layout: home
 name: Chase Sapphire Preferred
 brand: Chase
 card_summary: The CSP is great for restaurants and okay for travel.

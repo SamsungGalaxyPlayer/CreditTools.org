@@ -4,7 +4,7 @@ title: "Chase"
 
 <h1>{{ page.title }}</h1>
 
-## All {{ page.name }} Cards
+## All {{ page.title }} Cards
 
 <!-- Load the necessary styles and scripts for DataTables -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">

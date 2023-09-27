@@ -6,7 +6,7 @@ title: "Citi"
 
 Citi is best known for its simple credit cards, which makes it easy for credit card newcomers to earn excellent rewards. With additional transfer partner effort, Citi cards can offer additional values. However, make sure to avoid common points redemption pitfalls.
 
-## All {{ page.name }} Cards
+## All {{ page.title }} Cards
 
 <!-- Load the necessary styles and scripts for DataTables -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
@@ -33,7 +33,7 @@ $(document).ready( function () {
   </thead>
   <tbody>
     {% for card in site.cards %}
-      {% if card.brand == {{ page.name }} %}
+      {% if card.brand == {{ page.title }} %}
         <tr>
           <td><a href="{{ card.url }}">{{ card.name }}</a></td>
           <td>{{ card.annual_fee }}</td>
