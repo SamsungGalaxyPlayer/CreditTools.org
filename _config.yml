@@ -1,6 +1,7 @@
 title: CreditTools.org
 description: CreditTools.org is a not-for-profit website that aims to educate individuals on good credit card and other financial habits. It aims to be the definitive free resource on credit cards.
 theme: just-the-docs
+bareurl: ""
 
 permalink: pretty
 
@@ -36,3 +37,13 @@ defaults:
       type: "cards"
     values:
       layout: "default"
+
+heading_anchors: true
+search_enabled: true
+
+footer_content: "Copyright &copy; CreditTools.org"
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/SamsungGalaxyPlayer/CreditTools.org" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
