@@ -112,13 +112,13 @@ $(document).ready(function() {
   {% endfor %}
 </div>
 
-<!-- Dynamically Generated Table -->
+<!-- Table Generation -->
 <table id="{{ page.title }}_cards_table_3">
   <thead>
     <tr>
-      {% for field in site.data.credit_card_template.fields %}
-      {% assign field_details = field[1] %}
-      <th>{{ field_details.title }}</th>
+      {% for column in page.default_visible_columns %}
+      {% assign column_details = site.data.credit_card_template.fields[column] %}
+      <th data-key="{{ column }}">{{ column_details.title }}</th>
       {% endfor %}
     </tr>
   </thead>
@@ -126,9 +126,8 @@ $(document).ready(function() {
     {% for card in site.cards %}
       {% if card.brand == page.title %}
       <tr>
-        {% for field in site.data.credit_card_template.fields %}
-        {% assign field_key = field[0] %}
-        <td>{{ card[field_key] }}</td>
+        {% for column in page.default_visible_columns %}
+        <td>{{ card[column] }}</td>
         {% endfor %}
       </tr>
       {% endif %}
@@ -138,27 +137,35 @@ $(document).ready(function() {
 
 <script>
 $(document).ready(function() {
-    let defaultColumnsVisibility = [];
-    $('#{{ page.title }}_cards_table_3 th').each(function(index, th) {
-        let title = $(th).text();
-        let checkbox = $(`.column-toggler[data-title="${title}"]`);
-        defaultColumnsVisibility.push(checkbox.is(":checked"));
-    });
-
-    let dataTable = $('#{{ page.title }}_cards_table_3').DataTable({
-        "columnDefs": [{
-            "targets": "_all",
-            "visible": function(idx) {
-                return defaultColumnsVisibility[idx];
-            }
-        }]
-    });
+    let dataTable = $('#{{ page.title }}_cards_table_3').DataTable();
 
     $('.column-toggler').change(function() {
         let title = $(this).data('title');
-        let columnIdx = $(`#{{ page.title }}_cards_table_3 th:contains("${title}")`).index();
-        let column = dataTable.column(columnIdx);
-        column.visible(!column.visible());
+        let columnKey = $(this).data('column');
+        let columnIdx = $(`#{{ page.title }}_cards_table_3 th[data-key="${columnKey}"]`).index();
+
+        // If the column is already present, toggle its visibility
+        if (columnIdx > -1) {
+            let column = dataTable.column(columnIdx);
+            column.visible(!column.visible());
+        } 
+        // If the column isn't present in the table, dynamically add it
+        else {
+            // Fetch data and create a new column
+            // (This might need a more sophisticated approach depending on how your data is structured)
+            let columnData = [];
+            $("tbody tr", '#{{ page.title }}_cards_table_3').each(function() {
+                let rowData = $(this).data(columnKey); // assuming your rows have data-* attributes matching columns
+                columnData.push(rowData || '-'); // If data doesn't exist, push a placeholder like '-'
+            });
+
+            dataTable.column.add({
+                data: columnData,
+                title: title
+            }).draw();
+
+            // You might need to ensure the new column is placed in the correct order
+        }
     });
 });
 </script>
