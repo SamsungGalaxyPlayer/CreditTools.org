@@ -1,6 +1,6 @@
 ---
-name: Chase Sapphire Reserve
-brand: Chase
+card_name: Chase Sapphire Reserve
+card_brand: Chase
 card_summary: The CSP is best for frequent travellers.
 annual_fee: $550
 apr: 21.24%-28.24%
@@ -10,7 +10,7 @@ issuing_bank: Chase
 url: https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
 ---
 
-<h1>{{ page.name }}</h1>
+<h1>{{ page.card_name }}</h1>
 
 Here is a brief description.
 
@@ -32,35 +32,5 @@ Here is a brief description.
     </tr>
     {% endif %}
     {% endfor %}
-  </tbody>
-</table>
-
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
-
-<!-- DataTable Initialization -->
-<script>
-$(document).ready(function() {
-    $('#{{ page.name }}_table').DataTable();
-});
-</script>
-
-<table id="{{ page.name }}_table">
-  <thead>
-    <tr>
-      {% for field in site.data.credit_card_template.fields %}
-      {% assign field_key = field[0] %}
-      {% assign field_details = field[1] %}
-      <th>{{ field_details.title }}</th>
-      {% endfor %}
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      {% for field in site.data.credit_card_template.fields %}
-      {% assign field_key = field[0] %}
-      <td>{{ page[field_key] }}</td>
-      {% endfor %}
-    </tr>
   </tbody>
 </table>

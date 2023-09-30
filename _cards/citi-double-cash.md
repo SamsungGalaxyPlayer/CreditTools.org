@@ -1,6 +1,6 @@
 ---
 name: Citi Double Cash
-brand: Citi
+card_brand: Citi
 card_summary: Perhaps the best-known flat 2% back credit card. Easy with few perks.
 annual_fee: $0
 apr: 18.49%-28.49%
@@ -10,7 +10,7 @@ issuing_bank: Citi
 url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
 ---
 
-<h1>{{ page.name }}</h1>
+<h1>{{ page.card_name }}</h1>
 
 ## Subtitle
 
