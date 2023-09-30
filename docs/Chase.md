@@ -97,72 +97,46 @@ $(document).ready(function() {
 
 <!-- Parameters Selection -->
 <div>
-    <label><input type="checkbox" class="column-toggler" data-column="name"> Name</label>
-    <label><input type="checkbox" class="column-toggler" data-column="annual_fee"> Annual Fee</label>
-    <label><input type="checkbox" class="column-toggler" data-column="approx_current_sub_value"> Approx. Sub</label>
-    <label><input type="checkbox" class="column-toggler" data-column="card_summary"> Card Summary</label>
-    <!-- Add more checkboxes for other parameters -->
+  {% for field_key, field_details in site.data.credit_card_template.fields %}
+  <label>
+    <input type="checkbox" class="column-toggler" data-column="{{ field_key }}" checked>
+    {{ field_details.title }}
+  </label>
+  {% endfor %}
 </div>
 
+<!-- Dynamically Generated Table -->
 <table id="{{ page.title }}_cards_table_3">
-    <thead>
-        <tr>
-            <!-- Columns will be added dynamically here based on user selection -->
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Rows data will be added dynamically here based on user selection -->
-    </tbody>
+  <thead>
+    <tr>
+      {% for field_key, field_details in site.data.credit_card_template.fields %}
+      <th>{{ field_details.title }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for card in site.cards %}
+      {% if card.brand == page.title %}
+      <tr>
+        {% for field_key, field_details in site.data.credit_card_template.fields %}
+        <td>{{ card[field_key] }}</td>
+        {% endfor %}
+      </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
 </table>
 
 <script>
 $(document).ready(function() {
-    let dataTable;
+    let dataTable = $('#{{ page.title }}_cards_table_3').DataTable();
 
-    // Handle column toggling
     $('.column-toggler').change(function() {
-        let columnData = [];
-        $('.column-toggler:checked').each(function() {
-            let columnName = $(this).data('column');
-            columnData.push(columnName);
-        });
-        rebuildTable(columnData);
+        let columnKey = $(this).data('column');
+        // Use the field's key to determine the column's index
+        let columnIdx = $(`#{{ page.title }}_cards_table_3 th:contains('{{ site.data.credit_card_template.fields[columnKey].title }}')`).index();
+        let column = dataTable.column(columnIdx);
+        column.visible(!column.visible());
     });
-
-    function rebuildTable(columns) {
-        // Destroy the existing datatable if any
-        if (dataTable) {
-            dataTable.destroy();
-            $('#{{ page.title }}_cards_table_3').empty();
-        }
-
-        let headerRow = '<tr>';
-        columns.forEach(col => {
-            headerRow += `<th>${capitalizeFirstLetter(col)}</th>`;
-        });
-        headerRow += '</tr>';
-
-        $('#{{ page.title }}_cards_table_3 thead').html(headerRow);
-
-        let bodyContent = '';
-        {% for card in site.cards %}
-        if ("{{ card.brand }}" == "{{ page.title }}") {
-            bodyContent += '<tr>';
-            columns.forEach(col => {
-                bodyContent += `<td>${{ card[col] }}</td>`;
-            });
-            bodyContent += '</tr>';
-        }
-        {% endfor %}
-
-        $('#{{ page.title }}_cards_table_3 tbody').html(bodyContent);
-
-        // Initialize datatable on the newly created table structure
-        dataTable = $('#{{ page.title }}_cards_table_3').DataTable();
-    }
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
 });
 </script>
