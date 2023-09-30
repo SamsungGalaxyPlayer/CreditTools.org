@@ -97,7 +97,9 @@ $(document).ready(function() {
 
 <!-- Parameters Selection -->
 <div>
-  {% for field_key, field_details in site.data.credit_card_template.fields %}
+  {% for field in site.data.credit_card_template.fields %}
+  {% assign field_key = field[0] %}
+  {% assign field_details = field[1] %}
   <label>
     <input type="checkbox" class="column-toggler" data-column="{{ field_key }}" checked>
     {{ field_details.title }}
@@ -109,7 +111,8 @@ $(document).ready(function() {
 <table id="{{ page.title }}_cards_table_3">
   <thead>
     <tr>
-      {% for field_key, field_details in site.data.credit_card_template.fields %}
+      {% for field in site.data.credit_card_template.fields %}
+      {% assign field_details = field[1] %}
       <th>{{ field_details.title }}</th>
       {% endfor %}
     </tr>
@@ -118,7 +121,8 @@ $(document).ready(function() {
     {% for card in site.cards %}
       {% if card.brand == page.title %}
       <tr>
-        {% for field_key, field_details in site.data.credit_card_template.fields %}
+        {% for field in site.data.credit_card_template.fields %}
+        {% assign field_key = field[0] %}
         <td>{{ card[field_key] }}</td>
         {% endfor %}
       </tr>
