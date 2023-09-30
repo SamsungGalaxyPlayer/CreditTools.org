@@ -1,5 +1,10 @@
 ---
 title: "Chase"
+default_visible_columns:
+  - card_name
+  - annual_fee
+  - approx_current_sub_value
+  - card_summary
 ---
 
 <h1>{{ page.title }}</h1>
@@ -101,7 +106,7 @@ $(document).ready(function() {
   {% assign field_key = field[0] %}
   {% assign field_details = field[1] %}
   <label>
-    <input type="checkbox" class="column-toggler" data-column="{{ field_key }}" checked>
+    <input type="checkbox" class="column-toggler" data-column="{{ field_key }}" data-title="{{ field_details.title }}" {% if page.default_visible_columns contains field_key %} checked {% endif %}>
     {{ field_details.title }}
   </label>
   {% endfor %}
@@ -133,12 +138,25 @@ $(document).ready(function() {
 
 <script>
 $(document).ready(function() {
-    let dataTable = $('#{{ page.title }}_cards_table_3').DataTable();
+    let defaultColumnsVisibility = [];
+    $('#{{ page.title }}_cards_table_3 th').each(function(index, th) {
+        let title = $(th).text();
+        let checkbox = $(`.column-toggler[data-title="${title}"]`);
+        defaultColumnsVisibility.push(checkbox.is(":checked"));
+    });
+
+    let dataTable = $('#{{ page.title }}_cards_table_3').DataTable({
+        "columnDefs": [{
+            "targets": "_all",
+            "visible": function(idx) {
+                return defaultColumnsVisibility[idx];
+            }
+        }]
+    });
 
     $('.column-toggler').change(function() {
-        let columnKey = $(this).data('column');
-        // Use the field's key to determine the column's index
-        let columnIdx = $(`#{{ page.title }}_cards_table_3 th:contains('{{ site.data.credit_card_template.fields[columnKey].title }}')`).index();
+        let title = $(this).data('title');
+        let columnIdx = $(`#{{ page.title }}_cards_table_3 th:contains("${title}")`).index();
         let column = dataTable.column(columnIdx);
         column.visible(!column.visible());
     });
