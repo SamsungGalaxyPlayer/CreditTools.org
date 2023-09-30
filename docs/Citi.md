@@ -1,5 +1,10 @@
 ---
 title: "Citi"
+default_visible_columns:
+  - card_name
+  - annual_fee
+  - approx_current_sub_value
+  - card_summary
 ---
 
 <h1>{{ page.title }}</h1>
@@ -25,20 +30,22 @@ $(document).ready( function () {
 <table id="{{ page.title }}_cards_table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Annual Fee</th>
-      <th>Approx. Sub</th>
-      <th>Card Summary</th>
+      {% for column in page.default_visible_columns %}
+        <th>{{ site.data.credit_card_template.fields[column].title }}</th>
+      {% endfor %}
     </tr>
   </thead>
   <tbody>
     {% for card in site.cards %}
       {% if card.card_brand == page.title %}
         <tr>
-          <td><a href="{{ card.url }}">{{ card.name }}</a></td>
-          <td>{{ card.annual_fee }}</td>
-          <td>{{ card.approx_current_sub_value }}</td>
-          <td>{{ card.card_summary }}</td>
+          {% for column in page.default_visible_columns %}
+            {% if column == 'card_name' %}
+              <td><a href="{{ card.url }}">{{ card[column] }}</a></td>
+            {% else %}
+              <td>{{ card[column] }}</td>
+            {% endif %}
+          {% endfor %}
         </tr>
       {% endif %}
     {% endfor %}

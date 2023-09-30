@@ -14,6 +14,8 @@ url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
 
 Here is a brief description.
 
+## Specs
+
 <table>
   <thead>
     <tr>
