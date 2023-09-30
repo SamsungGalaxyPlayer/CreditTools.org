@@ -24,3 +24,10 @@ callouts:
     color: red
   friendly:
     color: blue
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
