@@ -31,3 +31,8 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+  - scope:
+      path: "_cards"
+      type: "cards"
+    values:
+      layout: "default"
