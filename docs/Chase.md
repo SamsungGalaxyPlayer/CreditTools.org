@@ -58,7 +58,7 @@ $(document).ready( function () {
     <!-- Add more checkboxes for other parameters -->
 </div>
 
-<table id="{{ page.title }}_cards_table">
+<table id="{{ page.title }}_cards_table_2">
     <thead>
         <tr>
             <th>Name</th>
@@ -83,7 +83,7 @@ $(document).ready( function () {
 
 <script>
 $(document).ready(function() {
-    let dataTable = $('#{{ page.title }}_cards_table').DataTable();
+    let dataTable = $('#{{ page.title }}_cards_table_2').DataTable();
 
     $('.column-toggler').change(function() {
         let columnIdx = $(this).data('column');
@@ -93,3 +93,76 @@ $(document).ready(function() {
 });
 </script>
 
+---
+
+<!-- Parameters Selection -->
+<div>
+    <label><input type="checkbox" class="column-toggler" data-column="name"> Name</label>
+    <label><input type="checkbox" class="column-toggler" data-column="annual_fee"> Annual Fee</label>
+    <label><input type="checkbox" class="column-toggler" data-column="approx_current_sub_value"> Approx. Sub</label>
+    <label><input type="checkbox" class="column-toggler" data-column="card_summary"> Card Summary</label>
+    <!-- Add more checkboxes for other parameters -->
+</div>
+
+<table id="{{ page.title }}_cards_table_3">
+    <thead>
+        <tr>
+            <!-- Columns will be added dynamically here based on user selection -->
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Rows data will be added dynamically here based on user selection -->
+    </tbody>
+</table>
+
+<script>
+$(document).ready(function() {
+    let dataTable;
+
+    // Handle column toggling
+    $('.column-toggler').change(function() {
+        let columnData = [];
+        $('.column-toggler:checked').each(function() {
+            let columnName = $(this).data('column');
+            columnData.push(columnName);
+        });
+        rebuildTable(columnData);
+    });
+
+    function rebuildTable(columns) {
+        // Destroy the existing datatable if any
+        if (dataTable) {
+            dataTable.destroy();
+            $('#{{ page.title }}_cards_table_3').empty();
+        }
+
+        let headerRow = '<tr>';
+        columns.forEach(col => {
+            headerRow += `<th>${capitalizeFirstLetter(col)}</th>`;
+        });
+        headerRow += '</tr>';
+
+        $('#{{ page.title }}_cards_table_3 thead').html(headerRow);
+
+        let bodyContent = '';
+        {% for card in site.cards %}
+        if ("{{ card.brand }}" == "{{ page.title }}") {
+            bodyContent += '<tr>';
+            columns.forEach(col => {
+                bodyContent += `<td>${{ card[col] }}</td>`;
+            });
+            bodyContent += '</tr>';
+        }
+        {% endfor %}
+
+        $('#{{ page.title }}_cards_table_3 tbody').html(bodyContent);
+
+        // Initialize datatable on the newly created table structure
+        dataTable = $('#{{ page.title }}_cards_table_3').DataTable();
+    }
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+});
+</script>
