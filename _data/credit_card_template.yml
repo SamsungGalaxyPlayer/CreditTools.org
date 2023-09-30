@@ -18,7 +18,7 @@ fields:
     title: "Card Summary"
     description: "MAX 140 characters! Additional context can be provided on the card page. Summarize the card for display in bank tables."
   annual_fee:
-    type: "number"
+    type: "text"
     required: true
     title: "Annual Fee"
     description: "State the annual fee charged for the card. Enter '0' if there is no fee."
@@ -54,8 +54,8 @@ fields:
     description: "Specify the annual percentage rate for cash advances, if different from the ongoing APR."
   approx_current_sub_value:
     type: "text"
-    title: "Approximate Current Subscription Value"
-    description: "Provide an estimated value for current offers or subscription services related to the card."
+    title: "Approximate Current Sign Up Bonus Value"
+    description: "Provide an estimated value for current offers or sign up bonuses related to the card."
   issuing_bank:
     type: "text"
     required: true

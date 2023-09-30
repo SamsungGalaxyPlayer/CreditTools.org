@@ -56,7 +56,7 @@ function generateGitHubIssueURL() {
         return;
     }
 
-    let baseURL = "https://github.com/{owner}/{repo}/issues/new?";
+    let baseURL = "https://github.com/SamsungGalaxyPlayer/CreditTools.org/issues/new?";
     let title = "New Card Submission: " + document.getElementById('card_name').value;
     let body = "";
 
